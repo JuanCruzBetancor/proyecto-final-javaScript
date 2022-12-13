@@ -57,7 +57,7 @@ const nuestrosProductos = [
     },
     {
         id:7,
-        nombre: 'Campera rompeviento Adidas',
+        nombre: 'Campera Adidas',
         precio:  19500,
         marca: 'adidas',
         categoria:'camperas',
@@ -66,7 +66,7 @@ const nuestrosProductos = [
     },
     {
         id:8,
-        nombre: 'Campera rompeviento Puma',
+        nombre: 'Campera Puma',
         precio:  17000,
         marca: 'puma',
         categoria:'camperas',
@@ -75,7 +75,7 @@ const nuestrosProductos = [
     },
     {
         id:9,
-        nombre: 'Campera rompeviento Nike',
+        nombre: 'Campera Nike',
         precio:  20500,
         marca: 'nike',
         categoria: 'camperas',
@@ -84,18 +84,6 @@ const nuestrosProductos = [
     },
     
 ];
-
-/*
-//filtrar por marca, categoria y talle.
-const resultado = nuestrosProductos.filter((el) => el.marca.includes('adidas'));
-const resultado2 = nuestrosProductos.filter((el) => el.marca.includes('nike'));
-const resultado3 = nuestrosProductos.filter((el) => el.marca.includes('puma'));
-const resultado4 = nuestrosProductos.filter((el) => el.categoria.includes('medias'));
-const resultado5 = nuestrosProductos.filter((el) => el.categoria.includes('remeras'));
-const resultado6 = nuestrosProductos.filter((el) => el.categoria.includes('camperas'));
-const resultado7 = nuestrosProductos.filter((el) => el.talle.includes('talle L'));
-const resultado8 = nuestrosProductos.filter((el) => el.talle.includes('talle M'));
-const resultado9 = nuestrosProductos.filter((el) => el.talle.includes('talle S'));*/
 
 
 
