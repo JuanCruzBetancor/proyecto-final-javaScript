@@ -4,20 +4,22 @@ const nuestrosProductos = [
     {
         id:1,
         nombre: 'Medias Adidas',
-        precio: 2500,
+        precio: 2300,
         marca: 'adidas',
         categoria: 'medias',
         talle: 'unico',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/medias-adidas.jpg',
     },
     {
         id:2,
         nombre: 'Medias Puma',
-        precio:  2000,
+        precio:  2400,
         marca: 'puma',
         categoria: 'medias',
         talle: 'unico',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/medias-puma.jpg',
     },
     {
         id:3,
@@ -26,7 +28,8 @@ const nuestrosProductos = [
         marca: 'nike',
         categoria:'medias',
         talle: 'unico',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/medias-nike.jpg',
     },
     {
         id:4,
@@ -35,7 +38,8 @@ const nuestrosProductos = [
         marca: 'adidas',
         categoria:'remeras',
         talle: 'L',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/camiseta-boca.jpg',
     },
     {
         id:5,
@@ -44,7 +48,8 @@ const nuestrosProductos = [
         marca: 'nike',
         categoria:'remeras',
         talle: 'M',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/camiseta-paris.jpg',
     },
     {
         id:6,
@@ -53,7 +58,8 @@ const nuestrosProductos = [
         marca: 'puma',
         categoria:'remeras',
         talle: 'S',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/camiseta-independiente.jpg',
     },
     {
         id:7,
@@ -62,16 +68,18 @@ const nuestrosProductos = [
         marca: 'adidas',
         categoria:'camperas',
         talle: 'L',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/campera-adidas.jpg',
     },
     {
         id:8,
         nombre: 'Campera Puma',
-        precio:  17000,
+        precio:  24000,
         marca: 'puma',
         categoria:'camperas',
         talle: 'S',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/campera-puma.jpg',
     },
     {
         id:9,
@@ -80,10 +88,9 @@ const nuestrosProductos = [
         marca: 'nike',
         categoria: 'camperas',
         talle: 'M',
-        cantidad: 0,
+        cantidad: 1,
+        imagen: '/multimedia/campera-nike.jpg',
     },
     
 ];
-
-
 
