@@ -150,6 +150,6 @@ const carritoStorage = (carrito) =>{
 };
 //obtener datos carrito.
 const obtenerCarrito = () =>{
-    const carritoStorage = JSON.parse(localStorage.getItem('carrito'));
-    return carritoStorage;
+    const obtenerCarritoStorage = JSON.parse(localStorage.getItem('carrito'));
+    return obtenerCarritoStorage;
 };

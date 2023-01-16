@@ -22,5 +22,4 @@ const pintarProductos= async () => {
 const ordenarMenorMayor = (data) =>{
     data.sort((a, b) => a.precio - b.precio);
 };
-pintarProductos();
 
