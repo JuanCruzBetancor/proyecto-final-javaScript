@@ -1,8 +1,8 @@
 
 const pintarProductos= async () => {
     const contenedor = document.getElementById('producto-contenedor');
-    const data = await controladorPruductos()
-    ordenarMenorMayor(data)
+    const data = await controladorPruductos();
+    ordenarMenorMayor(data);
     data.forEach(productos =>{
         const div = document.createElement('div');
         div.classList.add('card');
@@ -18,7 +18,7 @@ const pintarProductos= async () => {
         contenedor.appendChild(div);
     });
 }
-
+pintarProductos();
 //Ordene los productos de menor a mayor.
 const ordenarMenorMayor = (data) =>{
     data.sort((a, b) => a.precio - b.precio);
