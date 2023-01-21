@@ -18,7 +18,7 @@ const pintarProductos= async () => {
         contenedor.appendChild(div);
     });
 }
-pintarProductos();
+
 //Ordene los productos de menor a mayor.
 const ordenarMenorMayor = (data) =>{
     data.sort((a, b) => a.precio - b.precio);

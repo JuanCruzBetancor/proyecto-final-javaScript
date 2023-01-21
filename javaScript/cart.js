@@ -62,6 +62,8 @@ const actualizarCarrito = (carrito) =>{
     const totalDescuento = carrito.reduce((acc,item) => acc + (item.precio * item.cantidad * (0.90)),0)
     pintarTotales(totalCantidad, totalCompra, totalDescuento);
     carritoStorage(carrito);
+    vaciarCarrito(carrito);
+    botonFinalizar(carrito);
 };
 
 
@@ -72,8 +74,8 @@ const pintarTotales = (totalCantidad, totalCompra, totalDescuento) =>{
     const precioTotalCarrito = document.getElementById('precioTotalCarrito');
     const precioTotalDescuento = document.getElementById('precioTotalDescuento')
     cantidadCarrito.innerText = totalCantidad;
-    precioTotalCarrito.innerText = totalCompra;
-    precioTotalDescuento.innerText = totalDescuento;
+    precioTotalCarrito.innerText = `$ ${totalCompra}`;
+    precioTotalDescuento.innerText = `$ ${totalDescuento}`;
 };
 
 //Eliminar productos del carrito
@@ -81,7 +83,7 @@ const eliminarProductos = document.getElementById('staticBackdrop');
 
 eliminarProductos.addEventListener('click', (e) =>{
     if (e.target.classList.contains('btn-close1')) {
-        eliminarProductosCarrito(e.target.value);
+        eliminarProductosCarrito (e.target.value);
         Toastify({
             gravity: "top",
             text: "Producto eliminado del carrito.",
@@ -95,7 +97,7 @@ eliminarProductos.addEventListener('click', (e) =>{
 
 const eliminarProductosCarrito = (productoId) =>{
     const productoIndex = carrito.findIndex(producto => producto.id == productoId);
-    carrito.splice(productoIndex, 1);
+    carrito.splice(productoIndex,1);
     pintarCarritoActualizado(carrito);
     //Actualizar total carrito.
     actualizarCarrito(carrito);
@@ -128,11 +130,11 @@ const pintarCarritoActualizado = (carrito) =>{
     `
     contenedor.appendChild(div);
     });
-    
 };
 
-// //funcion para vaciar total carrito
-const eliminarTodo = document.getElementById('eliminar-todo');
+// //vaciar total carrito
+const vaciarCarrito = (carrito) =>{
+    const eliminarTodo = document.getElementById('eliminar-todo');
 eliminarTodo.addEventListener('click', () =>{
     carrito.length = 0;
     actualizarCarrito(carrito)
@@ -143,6 +145,7 @@ eliminarTodo.addEventListener('click', () =>{
         text: 'El carrito fue vaciado con exitó!',
     })
 })
+} 
 
 // almacenando datos de carrito en el localStorage en formato JSON.
 const carritoStorage = (carrito) =>{
@@ -153,3 +156,23 @@ const obtenerCarrito = () =>{
     const obtenerCarritoStorage = JSON.parse(localStorage.getItem('carrito'));
     return obtenerCarritoStorage;
 };
+// // funcionalidad boton comprar.
+const botonFinalizar = (carrito) =>{
+    const finalizarCompra = document.querySelector('#finalizar-compra');
+    finalizarCompra.addEventListener('click', () =>{
+        if (carrito.length === 0) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Buenas!!',
+            text: 'El carrito se encuentra vacio!',
+        })
+    } else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Resúmen de compra:',
+            text: 'Su compra fue realizada con éxito.',
+        })
+    }
+})
+}
+
