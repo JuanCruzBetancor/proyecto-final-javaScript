@@ -63,7 +63,6 @@ const actualizarCarrito = (carrito) =>{
     pintarTotales(totalCantidad, totalCompra, totalDescuento);
     carritoStorage(carrito);
     vaciarCarrito(carrito);
-    botonFinalizar(carrito);
 };
 
 
@@ -97,7 +96,7 @@ eliminarProductos.addEventListener('click', (e) =>{
 
 const eliminarProductosCarrito = (productoId) =>{
     const productoIndex = carrito.findIndex(producto => producto.id == productoId);
-    carrito.splice(productoIndex,1);
+        carrito.splice(productoIndex, 1)
     pintarCarritoActualizado(carrito);
     //Actualizar total carrito.
     actualizarCarrito(carrito);
@@ -156,23 +155,6 @@ const obtenerCarrito = () =>{
     const obtenerCarritoStorage = JSON.parse(localStorage.getItem('carrito'));
     return obtenerCarritoStorage;
 };
-// // funcionalidad boton comprar.
-const botonFinalizar = (carrito) =>{
-    const finalizarCompra = document.querySelector('#finalizar-compra');
-    finalizarCompra.addEventListener('click', () =>{
-        if (carrito.length === 0) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Buenas!!',
-            text: 'El carrito se encuentra vacio!',
-        })
-    } else {
-        Swal.fire({
-            icon: 'success',
-            title: 'Resúmen de compra:',
-            text: 'Su compra fue realizada con éxito.',
-        })
-    }
-})
-}
+
+
 
