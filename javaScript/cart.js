@@ -155,6 +155,3 @@ const obtenerCarrito = () =>{
     const obtenerCarritoStorage = JSON.parse(localStorage.getItem('carrito'));
     return obtenerCarritoStorage;
 };
-
-
-
