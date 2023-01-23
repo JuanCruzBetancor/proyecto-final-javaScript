@@ -63,6 +63,7 @@ const actualizarCarrito = (carrito) =>{
     pintarTotales(totalCantidad, totalCompra, totalDescuento);
     carritoStorage(carrito);
     vaciarCarrito(carrito);
+    finalizarCompra(carrito);
 };
 
 
@@ -133,8 +134,9 @@ const pintarCarritoActualizado = (carrito) =>{
 
 // //vaciar total carrito
 const vaciarCarrito = (carrito) =>{
+    finalizarCompra(carrito)
     const eliminarTodo = document.getElementById('eliminar-todo');
-eliminarTodo.addEventListener('click', () =>{
+    eliminarTodo.addEventListener('click', () =>{
     carrito.length = 0;
     actualizarCarrito(carrito)
     pintarCarritoActualizado(carrito);
@@ -145,6 +147,25 @@ eliminarTodo.addEventListener('click', () =>{
     })
 })
 } 
+
+const finalizarCompra = (carrito) =>{
+    const compra = document.getElementById('finalizar-compra');
+    compra.addEventListener('click', () =>{        
+        if (carrito.length >= 1) {
+                    Swal.fire({
+                    icon: 'success',
+                    title: 'Perfecto!',
+                    text: 'Gracias por confiar en nosotros, lo esperamos pronto!',
+                })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Disculpe',
+                        text: 'No agregó ningun producto al carrito.',
+                    })
+                } 
+            });
+        }
 
 // almacenando datos de carrito en el localStorage en formato JSON.
 const carritoStorage = (carrito) =>{

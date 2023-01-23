@@ -4,5 +4,6 @@ document.addEventListener('DOMContentLoaded', () =>{
         carrito = obtenerCarrito();
         pintarCarritoActualizado(carrito);
         actualizarCarrito(carrito);
+        finalizarCompra(carrito);
     }
 });
